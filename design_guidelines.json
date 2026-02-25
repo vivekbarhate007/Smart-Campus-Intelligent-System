@@ -1,0 +1,158 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "Smart Campus Intelligence",
+      "personality": "Futuristic, Insightful, Empathetic, Precise",
+      "archetype": "The Electric Sage (Neon + Academic)",
+      "theme_mode": "dark"
+    },
+    "typography": {
+      "font_family": {
+        "heading": "Outfit, sans-serif",
+        "body": "Inter, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "scale": {
+        "h1": "text-5xl md:text-6xl font-bold tracking-tight",
+        "h2": "text-4xl md:text-5xl font-semibold tracking-tight",
+        "h3": "text-2xl md:text-3xl font-medium",
+        "h4": "text-xl font-semibold",
+        "body_lg": "text-lg leading-relaxed",
+        "body_base": "text-base leading-relaxed text-muted-foreground",
+        "caption": "text-sm text-muted-foreground/80",
+        "tiny": "text-xs font-mono uppercase tracking-wider"
+      },
+      "installation_instructions": "Import fonts in index.css: @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;700;900&display=swap');"
+    },
+    "colors": {
+      "palette": {
+        "base": {
+          "background": "#020617", 
+          "foreground": "#F8FAFC",
+          "card": "rgba(30, 41, 59, 0.4)",
+          "border": "rgba(148, 163, 184, 0.1)"
+        },
+        "brand": {
+          "primary": "#7C3AED", 
+          "primary_foreground": "#FFFFFF",
+          "secondary": "#0EA5E9",
+          "secondary_foreground": "#FFFFFF",
+          "accent": "#F472B6"
+        },
+        "functional": {
+          "success": "#10B981",
+          "warning": "#F59E0B",
+          "danger": "#EF4444",
+          "info": "#3B82F6",
+          "risk_high": "#FF3B30",
+          "risk_medium": "#FFCC00",
+          "risk_low": "#34C759"
+        }
+      },
+      "gradients": {
+        "primary": "linear-gradient(135deg, #7C3AED 0%, #0EA5E9 100%)",
+        "surface": "linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%)",
+        "glow": "radial-gradient(circle at center, rgba(124, 58, 237, 0.15) 0%, transparent 70%)"
+      }
+    },
+    "spacing": {
+      "container_padding": "p-6 md:p-8 lg:p-12",
+      "section_gap": "gap-8 md:gap-12",
+      "card_padding": "p-6"
+    },
+    "visual_enhancers": {
+      "glassmorphism": {
+        "default": "backdrop-blur-xl bg-slate-900/40 border border-slate-700/30 shadow-xl",
+        "heavy": "backdrop-blur-2xl bg-slate-950/60 border border-slate-800/50",
+        "hover": "hover:bg-slate-800/50 hover:border-slate-600/50 transition-all duration-300"
+      },
+      "borders": {
+        "default": "border border-border/40",
+        "glow": "border border-primary/50 shadow-[0_0_15px_rgba(124,58,237,0.3)]"
+      },
+      "shadows": {
+        "card": "0 8px 32px 0 rgba(0, 0, 0, 0.3)",
+        "neon": "0 0 10px rgba(124, 58, 237, 0.5), 0 0 20px rgba(14, 165, 233, 0.3)"
+      },
+      "rounded": {
+        "card": "rounded-2xl",
+        "button": "rounded-full",
+        "badge": "rounded-md"
+      }
+    }
+  },
+  "layout_strategies": {
+    "dashboard_grid": {
+      "type": "Bento Grid",
+      "className": "grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-6",
+      "areas": {
+        "hero_kpi": "col-span-1 md:col-span-4 lg:col-span-8 row-span-2",
+        "side_chart": "col-span-1 md:col-span-4 lg:col-span-4 row-span-2",
+        "feed": "col-span-1 md:col-span-2 lg:col-span-4 row-span-2"
+      }
+    },
+    "student_explorer": {
+      "type": "High Density",
+      "className": "w-full overflow-hidden rounded-xl border border-slate-800 bg-slate-950/50 backdrop-blur"
+    }
+  },
+  "components": {
+    "KPI_Card": {
+      "path": "src/components/dashboard/KPICard.js",
+      "style": "glassmorphism.default",
+      "structure": "Icon (top-left) + Label (top-right) + Big Number (center) + Trend (bottom)",
+      "animation": "Hover: scale-105"
+    },
+    "Risk_Badge": {
+      "path": "src/components/ui/RiskBadge.js",
+      "variants": {
+        "high": "bg-red-500/20 text-red-400 border-red-500/50",
+        "medium": "bg-yellow-500/20 text-yellow-400 border-yellow-500/50",
+        "low": "bg-green-500/20 text-green-400 border-green-500/50"
+      }
+    },
+    "Chart_Container": {
+      "path": "src/components/dashboard/ChartCard.js",
+      "library": "Recharts",
+      "style": "Use ResponsiveContainer. Custom Tooltip required (glass style). No grid lines or very subtle opacity 0.1."
+    }
+  },
+  "assets": {
+    "icons": {
+      "library": "Lucide React",
+      "style": "Stroke width 1.5, size 20-24px"
+    },
+    "images": {
+      "dashboard_hero_bg": "https://images.unsplash.com/photo-1687392946857-96c2b7f94b0d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRhcmslMjBibHVlJTIwcHVycGxlJTIwbWVzaCUyMGdyYWRpZW50JTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3NzE5ODE4NjJ8MA&ixlib=rb-4.1.0&q=85",
+      "login_bg": "https://images.pexels.com/photos/30547572/pexels-photo-30547572.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "avatars": [
+        "https://images.unsplash.com/photo-1711385532992-9d620284a943?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHN0dWRlbnQlMjBkaXZlcnNlfGVufDB8fHx8MTc3MTk4MTg2MHww&ixlib=rb-4.1.0&q=85",
+        "https://images.unsplash.com/photo-1615177393114-bd2917a4f74a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHByb2Zlc3NvciUyMGFjYWRlbWljfGVufDB8fHx8MTc3MTk4MTg2MXww&ixlib=rb-4.1.0&q=85",
+        "https://images.pexels.com/photos/8197541/pexels-photo-8197541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      ]
+    }
+  },
+  "instructions_to_main_agent": [
+    "1. SETUP: Install fonts and override CSS variables in index.css immediately to establish the dark theme.",
+    "2. GLASSMORPHISM: Do not use default opaque cards. Create a reusable 'GlassCard' component that applies the backdrop-blur and border styles defined in visual_enhancers.",
+    "3. CHARTS: Use Recharts. Customise the 'Tooltip' to be a glass card. Use the 'brand' colors for lines/bars. Hide cartesian grids or make them 5% opacity.",
+    "4. LAYOUT: Use the Bento Grid for the Overview dashboard. It must look designed, not just a list of boxes.",
+    "5. SHAP VALUES: When displaying SHAP explanations, use horizontal bar charts. Red bars = Risk increase, Green bars = Success increase.",
+    "6. TABLES: For the Student Explorer, use Shadcn Table but style the header with a transparent background and sticky positioning.",
+    "7. ANIMATIONS: Add 'framer-motion' layout animations. Entering a page should stagger the appearance of cards."
+  ],
+  "universal_guidelines": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid this.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts. Use grids.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition (transition: all).",
+    "You MUST NOT center align the app container.",
+    "Always use modern button styles (pill-shaped or sharp).",
+    "NEVER use AI assistant Emoji characters.",
+    "Every interaction needs micro-animations.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "All interactive elements MUST include data-testid."
+  ]
+}
