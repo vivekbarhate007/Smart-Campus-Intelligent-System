@@ -1,75 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-    margin: 0;
-    font-family:
-        -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-    font-family:
-        source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-
 @layer base {
     :root {
-        --background: 0 0% 100%;
-        --foreground: 0 0% 3.9%;
-        --card: 0 0% 100%;
-        --card-foreground: 0 0% 3.9%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 0 0% 3.9%;
-        --primary: 0 0% 9%;
-        --primary-foreground: 0 0% 98%;
-        --secondary: 0 0% 96.1%;
-        --secondary-foreground: 0 0% 9%;
-        --muted: 0 0% 96.1%;
-        --muted-foreground: 0 0% 45.1%;
-        --accent: 0 0% 96.1%;
-        --accent-foreground: 0 0% 9%;
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 0 0% 89.8%;
-        --input: 0 0% 89.8%;
-        --ring: 0 0% 3.9%;
-        --chart-1: 12 76% 61%;
-        --chart-2: 173 58% 39%;
-        --chart-3: 197 37% 24%;
-        --chart-4: 43 74% 66%;
-        --chart-5: 27 87% 67%;
-        --radius: 0.5rem;
-    }
-    .dark {
-        --background: 0 0% 3.9%;
-        --foreground: 0 0% 98%;
-        --card: 0 0% 3.9%;
-        --card-foreground: 0 0% 98%;
-        --popover: 0 0% 3.9%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
-        --primary-foreground: 0 0% 9%;
-        --secondary: 0 0% 14.9%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 0 0% 14.9%;
-        --muted-foreground: 0 0% 63.9%;
-        --accent: 0 0% 14.9%;
-        --accent-foreground: 0 0% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 0 0% 14.9%;
-        --input: 0 0% 14.9%;
-        --ring: 0 0% 83.1%;
-        --chart-1: 220 70% 50%;
-        --chart-2: 160 60% 45%;
-        --chart-3: 30 80% 55%;
-        --chart-4: 280 65% 60%;
-        --chart-5: 340 75% 55%;
+        /* Smart Campus Dark Theme - Vibrant Intelligence */
+        --background: 222 47% 4%;
+        --foreground: 210 40% 98%;
+        
+        --card: 222 47% 8%;
+        --card-foreground: 210 40% 98%;
+        
+        --popover: 222 47% 6%;
+        --popover-foreground: 210 40% 98%;
+        
+        --primary: 263 70% 58%;
+        --primary-foreground: 0 0% 100%;
+        
+        --secondary: 199 89% 48%;
+        --secondary-foreground: 0 0% 100%;
+        
+        --accent: 330 81% 72%;
+        --accent-foreground: 0 0% 100%;
+        
+        --muted: 217 33% 17%;
+        --muted-foreground: 215 20% 65%;
+        
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        
+        --border: 215 28% 17%;
+        --input: 215 28% 17%;
+        --ring: 263 70% 58%;
+        
+        /* Functional colors */
+        --success: 160 84% 39%;
+        --warning: 38 92% 50%;
+        --danger: 0 84% 60%;
+        --info: 217 91% 60%;
+        
+        /* Risk colors */
+        --risk-high: 0 100% 59%;
+        --risk-medium: 48 100% 50%;
+        --risk-low: 142 71% 45%;
+        
+        /* Chart colors */
+        --chart-1: 263 70% 58%;
+        --chart-2: 199 89% 48%;
+        --chart-3: 330 81% 72%;
+        --chart-4: 160 84% 39%;
+        --chart-5: 38 92% 50%;
+        
+        --radius: 0.75rem;
     }
 }
 
@@ -77,39 +61,159 @@ code {
     * {
         @apply border-border;
     }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
     body {
-        @apply bg-background text-foreground;
+        @apply bg-background text-foreground antialiased;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: #020617;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Outfit', sans-serif;
+    }
+    
+    code, pre, .font-mono {
+        font-family: 'JetBrains Mono', monospace;
     }
 }
 
+/* Glassmorphism utilities */
+@layer components {
+    .glass-card {
+        @apply backdrop-blur-xl border shadow-xl;
+        background: rgba(30, 41, 59, 0.4);
+        border-color: rgba(148, 163, 184, 0.1);
+    }
+    
+    .glass-card-heavy {
+        @apply backdrop-blur-2xl border;
+        background: rgba(15, 23, 42, 0.6);
+        border-color: rgba(148, 163, 184, 0.15);
+    }
+    
+    .glass-hover {
+        @apply transition-all duration-300;
+    }
+    
+    .glass-hover:hover {
+        background: rgba(51, 65, 85, 0.5);
+        border-color: rgba(148, 163, 184, 0.2);
+    }
+    
+    .gradient-primary {
+        background: linear-gradient(135deg, #7C3AED 0%, #0EA5E9 100%);
+    }
+    
+    .gradient-text {
+        background: linear-gradient(135deg, #7C3AED 0%, #0EA5E9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .glow-primary {
+        box-shadow: 0 0 20px rgba(124, 58, 237, 0.3), 0 0 40px rgba(14, 165, 233, 0.2);
+    }
+    
+    .glow-border {
+        border-color: rgba(124, 58, 237, 0.5);
+        box-shadow: 0 0 15px rgba(124, 58, 237, 0.3);
+    }
+    
+    /* Risk badges */
+    .risk-badge-high {
+        @apply px-2.5 py-1 rounded-md text-xs font-medium;
+        background: rgba(239, 68, 68, 0.2);
+        color: #f87171;
+        border: 1px solid rgba(239, 68, 68, 0.5);
+    }
+    
+    .risk-badge-medium {
+        @apply px-2.5 py-1 rounded-md text-xs font-medium;
+        background: rgba(245, 158, 11, 0.2);
+        color: #fbbf24;
+        border: 1px solid rgba(245, 158, 11, 0.5);
+    }
+    
+    .risk-badge-low {
+        @apply px-2.5 py-1 rounded-md text-xs font-medium;
+        background: rgba(34, 197, 94, 0.2);
+        color: #4ade80;
+        border: 1px solid rgba(34, 197, 94, 0.5);
+    }
+    
+    /* Scrollbar styling */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(30, 41, 59, 0.3);
+        border-radius: 3px;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(124, 58, 237, 0.5);
+        border-radius: 3px;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(124, 58, 237, 0.7);
+    }
+}
+
+/* Animation utilities */
+@layer utilities {
+    .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+    }
+    
+    .animate-slide-up {
+        animation: slideUp 0.5s ease-out forwards;
+    }
+    
+    .animate-glow {
+        animation: glow 2s ease-in-out infinite alternate;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(124, 58, 237, 0.5), 0 0 30px rgba(14, 165, 233, 0.3);
+    }
+}
+
+/* Debug wrapper fix */
 @layer base {
     [data-debug-wrapper="true"] {
         display: contents !important;
-    }
-
-    [data-debug-wrapper="true"] > * {
-        margin-left: inherit;
-        margin-right: inherit;
-        margin-top: inherit;
-        margin-bottom: inherit;
-        padding-left: inherit;
-        padding-right: inherit;
-        padding-top: inherit;
-        padding-bottom: inherit;
-        column-gap: inherit;
-        row-gap: inherit;
-        gap: inherit;
-        border-left-width: inherit;
-        border-right-width: inherit;
-        border-top-width: inherit;
-        border-bottom-width: inherit;
-        border-left-style: inherit;
-        border-right-style: inherit;
-        border-top-style: inherit;
-        border-bottom-style: inherit;
-        border-left-color: inherit;
-        border-right-color: inherit;
-        border-top-color: inherit;
-        border-bottom-color: inherit;
     }
 }
