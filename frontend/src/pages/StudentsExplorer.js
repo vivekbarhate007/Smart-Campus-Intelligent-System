@@ -191,63 +191,58 @@ const StudentsExplorer = () => {
                       </TableRow>
                     ))
                   ) : (
-                    <motion.tbody
-                      variants={containerVariants}
-                      initial="hidden"
-                      animate="visible"
-                      className="contents"
-                    >
-                      {students.map((student) => (
-                        <motion.tr
-                          key={student.student_id}
-                          variants={rowVariants}
-                          onClick={() => navigate(`/students/${student.student_id}`)}
-                          className="border-slate-800 cursor-pointer hover:bg-slate-800/50 transition-colors"
-                          data-testid={`student-row-${student.student_id}`}
-                        >
-                          <TableCell>
-                            <div className="flex items-center gap-3">
-                              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                                <User className="w-5 h-5 text-primary" />
-                              </div>
-                              <div>
-                                <div className="font-medium">{student.name}</div>
-                                <div className="text-xs text-muted-foreground">{student.email}</div>
-                              </div>
+                    students.map((student, index) => (
+                      <TableRow
+                        key={student.student_id}
+                        onClick={() => navigate(`/students/${student.student_id}`)}
+                        className="border-slate-800 cursor-pointer hover:bg-slate-800/50 transition-colors"
+                        data-testid={`student-row-${student.student_id}`}
+                        style={{ 
+                          animation: `fadeIn 0.3s ease-out ${index * 0.03}s both`
+                        }}
+                      >
+                        <TableCell>
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                              <User className="w-5 h-5 text-primary" />
                             </div>
-                          </TableCell>
-                          <TableCell className="text-muted-foreground">{student.major}</TableCell>
-                          <TableCell className="text-muted-foreground">Year {student.year}</TableCell>
-                          <TableCell>
-                            <span className={student.gpa >= 3.0 ? "text-green-400" : student.gpa >= 2.0 ? "text-yellow-400" : "text-red-400"}>
-                              {student.gpa?.toFixed(2)}
-                            </span>
-                          </TableCell>
-                          <TableCell>
-                            <div className="flex items-center gap-2">
-                              <div className="w-16 h-2 bg-slate-700 rounded-full overflow-hidden">
-                                <div 
-                                  className="h-full rounded-full"
-                                  style={{ 
-                                    width: `${(student.engagement_score || 0) * 100}%`,
-                                    backgroundColor: student.engagement_score >= 0.7 ? "#22C55E" : student.engagement_score >= 0.4 ? "#F59E0B" : "#EF4444"
-                                  }}
-                                />
-                              </div>
-                              <span className="text-xs text-muted-foreground">
-                                {((student.engagement_score || 0) * 100).toFixed(0)}%
-                              </span>
+                            <div>
+                              <div className="font-medium">{student.name}</div>
+                              <div className="text-xs text-muted-foreground">{student.email}</div>
                             </div>
-                          </TableCell>
-                          <TableCell>
-                            <span className="text-muted-foreground">
-                              {((student.attendance_rate || 0) * 100).toFixed(0)}%
+                          </div>
+                        </TableCell>
+                        <TableCell className="text-muted-foreground">{student.major}</TableCell>
+                        <TableCell className="text-muted-foreground">Year {student.year}</TableCell>
+                        <TableCell>
+                          <span className={student.gpa >= 3.0 ? "text-green-400" : student.gpa >= 2.0 ? "text-yellow-400" : "text-red-400"}>
+                            {student.gpa?.toFixed(2)}
+                          </span>
+                        </TableCell>
+                        <TableCell>
+                          <div className="flex items-center gap-2">
+                            <div className="w-16 h-2 bg-slate-700 rounded-full overflow-hidden">
+                              <div 
+                                className="h-full rounded-full"
+                                style={{ 
+                                  width: `${(student.engagement_score || 0) * 100}%`,
+                                  backgroundColor: student.engagement_score >= 0.7 ? "#22C55E" : student.engagement_score >= 0.4 ? "#F59E0B" : "#EF4444"
+                                }}
+                              />
+                            </div>
+                            <span className="text-xs text-muted-foreground">
+                              {((student.engagement_score || 0) * 100).toFixed(0)}%
                             </span>
-                          </TableCell>
-                          <TableCell>{getRiskBadge(student.risk_level)}</TableCell>
-                        </motion.tr>
-                      ))}
-                    </motion.tbody>
+                          </div>
+                        </TableCell>
+                        <TableCell>
+                          <span className="text-muted-foreground">
+                            {((student.attendance_rate || 0) * 100).toFixed(0)}%
+                          </span>
+                        </TableCell>
+                        <TableCell>{getRiskBadge(student.risk_level)}</TableCell>
+                      </TableRow>
+                    ))
                   )}
                 </TableBody>
               </Table>
