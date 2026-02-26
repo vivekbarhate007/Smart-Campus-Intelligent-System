@@ -23,7 +23,8 @@ Beautiful dark-themed landing with Google OAuth authentication.
 - **Course Difficulty**: Leaderboard of challenging courses
 
 ### Students Explorer
-<img width="764" height="389" alt="Screenshot 2026-02-26 at 11 10 14 AM" src="https://github.com/user-attachments/assets/10c2fade-b1eb-42bf-8fab-dad05f58225d" />
+<img width="759" height="411" alt="Screenshot 2026-02-26 at 11 11 05 AM" src="https://github.com/user-attachments/assets/c3a04208-e081-4399-bf87-737104a0f7a7" />
+
 
 - Searchable and filterable student table
 - Color-coded risk badges (High/Medium/Low)
