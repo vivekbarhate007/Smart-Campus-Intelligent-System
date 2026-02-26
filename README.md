@@ -15,7 +15,8 @@ A production-ready, full-stack analytics platform for tracking student engagemen
 Beautiful dark-themed landing with Google OAuth authentication.
 
 ### Dashboard
-![Dashboard](docs/dashboard.png)
+<img width="1470" height="778" alt="Screenshot 2026-02-25 at 10 47 36 AM" src="https://github.com/user-attachments/assets/3341255d-8fb7-467c-951c-af381163cb08" />
+
 - **KPI Cards**: Total students, at-risk count, avg engagement, burnout detection
 - **Engagement Trend**: Weekly engagement and attendance line chart
 - **Risk Distribution**: Pie chart showing high/medium/low risk students
