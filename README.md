@@ -23,7 +23,8 @@ Beautiful dark-themed landing with Google OAuth authentication.
 - **Course Difficulty**: Leaderboard of challenging courses
 
 ### Students Explorer
-<img width="759" height="411" alt="Screenshot 2026-02-26 at 11 11 05 AM" src="https://github.com/user-attachments/assets/c3a04208-e081-4399-bf87-737104a0f7a7" />
+<img width="1469" height="836" alt="Screenshot 2026-02-26 at 11 12 24 AM" src="https://github.com/user-attachments/assets/56217b3e-25ff-489c-be36-4961463560a0" />
+
 
 
 - Searchable and filterable student table
