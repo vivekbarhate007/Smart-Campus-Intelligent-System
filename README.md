@@ -23,21 +23,24 @@ Beautiful dark-themed landing with Google OAuth authentication.
 - **Course Difficulty**: Leaderboard of challenging courses
 
 ### Students Explorer
-![Students](docs/students.png)
+<img width="764" height="389" alt="Screenshot 2026-02-26 at 11 10 14 AM" src="https://github.com/user-attachments/assets/10c2fade-b1eb-42bf-8fab-dad05f58225d" />
+
 - Searchable and filterable student table
 - Color-coded risk badges (High/Medium/Low)
 - Engagement progress bars
 - Pagination with 15 students per page
 
 ### Student Detail
-![Student Detail](docs/student-detail.png)
+<img width="1470" height="768" alt="Screenshot 2026-02-25 at 10 48 00 AM" src="https://github.com/user-attachments/assets/a63b9d60-2c4c-45be-a703-775e724666a8" />
+
 - Complete student profile
 - Time-series engagement charts
 - **SHAP Explainability**: Visual bar chart showing risk factors
 - Personalized recommendations
 
 ### Courses Analytics
-![Courses](docs/courses.png)
+<img width="1470" height="779" alt="Screenshot 2026-02-25 at 10 48 31 AM" src="https://github.com/user-attachments/assets/0d6d770c-e99a-4123-a582-93384b7f528d" />
+
 - Course difficulty leaderboard
 - Department filtering
 - Course cards with avg grade, dropout rate, credits
